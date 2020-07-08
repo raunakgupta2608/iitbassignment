@@ -1,0 +1,8 @@
+<mat-toolbar class="background-primary">
+    <a mat-button routerLink='/intro'><span class="fa fa-circle fa-lg"></span> Intro</a>
+    <a mat-button routerLink='/home' *ngIf="_LoggedIn === 'true'"><span class="fa fa-home fa-lg"></span> Home</a>
+    <span>To login use UuseId = 121 & Password = iitb</span>
+    <span class="flex-spacer"></span>
+    <a mat-button *ngIf="_LoggedIn === 'false'" (click)="openLoginForm()"><span class="fa fa-sign-in fa-lg"></span> Login</a>
+    <a mat-button *ngIf="_LoggedIn === 'true'" (click)="openLogout()"><span class="fa fa-sign-out fa-lg"></span> Logout</a>
+</mat-toolbar>

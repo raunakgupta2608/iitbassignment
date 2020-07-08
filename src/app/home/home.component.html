@@ -1,0 +1,83 @@
+<div class="example-container">
+    <mat-toolbar color="#FFE57F" class="example-toolbar">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <h1 class="example-app-name">Click on the button to see the list of Users</h1>
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container">
+      <mat-sidenav #snav mode="push">
+        <mat-nav-list class="nav-list">
+          <a mat-list-item (click)="onClick(user, i); snav.toggle()" *ngFor="let user of users; let i= index;">{{user.name}}</a>
+        </mat-nav-list>
+      </mat-sidenav>
+
+      <mat-sidenav-content class="sidenav-content">
+
+        <form novalidate #editForm="ngForm" *ngIf="showContent" 
+            class="sidenav-content-div">
+            <p>
+                <mat-form-field>
+                    <input matInput placeholder="User Id" type="text" [(ngModel)]="u.id" 
+                    name="userid" #userid="ngModel" required [disabled]="!editable">
+                    <mat-error *ngIf="userid.errors?.required">Userid is required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>    
+                <mat-form-field>
+                    <input matInput placeholder="Name" type="text" [(ngModel)]="u.name" 
+                    name="name" #name="ngModel" required [disabled]="!editable">
+                    <mat-error *ngIf="name.errors?.required">Name is required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>    
+                <mat-form-field>
+                    <input matInput placeholder="Email" type="text" [(ngModel)]="u.email" 
+                    name="email" #email="ngModel" required [disabled]="!editable">
+                    <mat-error *ngIf="email.errors?.required">Email is required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>    
+                <mat-form-field>
+                    <input matInput placeholder="Purpose" type="text" [(ngModel)]="u.purpose" 
+                    name="purpose" #purpose="ngModel" required [disabled]="!editable">
+                    <mat-error *ngIf="purpose.errors?.required">purpose is required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>    
+                <mat-form-field>
+                    <input matInput placeholder="Programme" type="text" [(ngModel)]="u.programme" 
+                    name="programme" #programme="ngModel" required [disabled]="!editable">
+                    <mat-error *ngIf="programme.errors?.required">programme is required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>    
+                <mat-form-field>
+                    <input matInput placeholder="Language" type="text" [(ngModel)]="u.language" 
+                    name="language" #language="ngModel" required [disabled]="!editable">
+                    <mat-error *ngIf="language.errors?.required">language is required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>    
+                <mat-form-field class="matFormField">
+                    <input matInput placeholder="Comment" type="text" [(ngModel)]="u.comments" 
+                    name="comment" #comment="ngModel" required [disabled]="!editable">
+                    <mat-error *ngIf="comment.errors?.required">comment is required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>    
+                <mat-form-field>
+                    <input matInput placeholder="Status" type="text" [(ngModel)]="u.status" 
+                    name="status" #status="ngModel" required [disabled]="!editable">
+                    <mat-error *ngIf="status.errors?.required">status is required</mat-error>
+                </mat-form-field>
+            </p>
+            <span class="flex-spacer"></span>
+            <button mat-button class="cancel" (click)="cancelClicked()">Cancel</button>
+            <button mat-button class="background-primary text-floral-white"
+            [disabled]="editForm.form.invalid" (click)="onSubmit($event.target)">Edit</button>
+            <button mat-button class="cancel" (click)="onDelete()">Delete</button>
+        </form>
+      </mat-sidenav-content>
+      
+    </mat-sidenav-container>
+</div>

@@ -1,0 +1,44 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.example-toolbar {
+    z-index: 2;
+}
+
+.example-app-name {
+    margin-left: 8px;
+}
+
+.example-sidenav-container {
+    flex: 1 0 auto;
+}
+
+.nav-list {
+    width: 200px;
+}
+
+.sidenav-content {
+    margin: 50px;
+}
+
+.sidenav-content-div{
+    border: 1px solid black;
+    background-color: #FFECB3;
+    padding-left: 30px;
+}
+
+.cancel {
+    background-color: burlywood;
+}
+
+.matFormField {
+    width: 400px;
+}
+

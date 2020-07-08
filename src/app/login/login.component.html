@@ -1,0 +1,100 @@
+<mat-toolbar class="background-pale">
+    Login
+    <span class="flex-spacer"></span>
+    <button mat-button mat-dialog-close>&times;</button>
+</mat-toolbar>
+
+<form novalidate #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <mat-dialog-content>
+        <p>
+            <mat-form-field>
+                <input matInput placeholder="User Id" type="text" [(ngModel)]="user.userid" 
+                name="userid" #userid="ngModel" required>
+                <mat-error *ngIf="userid.errors?.required">Userid is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Password" type="password" [(ngModel)]="user.loginpass" 
+                name="loginpass" #loginpass="ngModel" required>
+                <mat-error *ngIf="loginpass.errors?.required">Password is required</mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            UserId = 121
+            Password = iitb
+        </p>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <span class="flex-spacer"></span>
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button type="submit" class="background-primary text-floral-white"
+        [disabled]="loginForm.form.invalid">Login</button>
+    </mat-dialog-actions>
+</form>
+<div *ngIf="spinner">
+    <h4>Processing Please Wait!!!</h4>
+    <mat-spinner></mat-spinner>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-subtitle>Please Enter your Details</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field>
+            <input matInput placeholder="User Id" type="text" [(ngModel)]="user.userid" 
+            name="userid" #userid="ngModel" required>
+            <mat-error *ngIf="userid.errors?.required">Userid is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Password" type="password" [(ngModel)]="user.loginpass" 
+            name="loginpass" #loginpass="ngModel" required>
+            <mat-error *ngIf="loginpass.errors?.required">Password is required</mat-error>
+        </mat-form-field>
+        <mat-checkbox [(ngModel)]="user.remember" name="remember">Remember Me</mat-checkbox>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LOGIN</button>
+    </mat-card-actions>
+</mat-card> -->

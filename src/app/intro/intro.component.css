@@ -1,0 +1,13 @@
+
+.main-div {
+    display: flex;
+    margin: 30px;
+}
+
+.img {
+    background-image: url("https://www.mumbailive.com/images/media/images/images_1578470901754_IIT_Bombay.jpg?bg=857d63&crop=587.8125%2C330%2C0%2C0&fit=crop&fitToScale=h%2C1368%2C768&h=768&height=330&w=1368&width=660");
+}
+
+.text-content {
+    padding: 20px;
+}
